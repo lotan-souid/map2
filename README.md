@@ -10,3 +10,7 @@ this is a project I made for my course of: "Intrudaction of Web Mapping" by Mich
 I follow his on the online bookm to create this map.
 Its also a project for enchance my skills on git and github.
 
+this map have few functions:
+- A popup for each town, with name of it.
+- A emphasis border for each town polygon.
+- A panel info with extra info on each town.
