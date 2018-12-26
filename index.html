@@ -75,6 +75,32 @@
                 .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
         }
 
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.pop_2015),
+                weight: 0.5,
+                opacity: 1,
+                color: "black",
+                fillOpacity: 0.7
+            };
+        }
+
+        var highlightStyle = {
+            weight: 3,
+            color: "yellow",
+            fillOpacity: 0.5
+        }
+
+        function highlightFeature(e) {
+            var currentlayer = e.target;
+            currentlayer.setStyle(highlightStyle);
+            currentlayer.bringToFront();
+        }
+
+        function resetHighlight(e) {
+            townsLayer.resetStyle(e.target);
+        }
+
         // get the geojason data add it to a layer
         // bind a popup for each feature
         // add everthing to my map
@@ -87,6 +113,8 @@
                         feature.properties.name_eng + "<br><b>" + 
                             formatNumber(feature.properties.pop_2015) + "</b></div>"
                     );
+                    layer.on("mouseover", highlightFeature)
+                    .on("mouseout", resetHighlight)
                 },
                 style: style
             }).addTo(myMap);
@@ -115,7 +143,7 @@
 
         legend.addTo(myMap);
 
-
+        
     </script>
 </body>
 </html>
