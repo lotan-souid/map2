@@ -19,3 +19,15 @@
     margin-right: 15px;
     display: inline-block;
 }
+
+.info {
+    height: 250px;
+    width: 250px;
+    background-color: rgba(245, 199, 140, 0.37);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 15px;
+}
+
+.info h2 {
+    text-align: center;
+}

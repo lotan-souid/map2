@@ -95,6 +95,17 @@
             var currentlayer = e.target;
             currentlayer.setStyle(highlightStyle);
             currentlayer.bringToFront();
+            $("#info").html(
+                '<strong>English:</strong> '+ 
+                currentlayer.feature.properties.name_eng+'<br>'+
+                '<strong>Hebrew:</strong> '+
+                currentlayer.feature.properties.name_heb+'<br>'+
+                '<strong>Population:</strong> '+
+                currentlayer.feature.properties.pop_2015+' peoples <br>'+
+                '<strong>Area:</strong> '+
+                currentlayer.feature.properties.pop_2015
+                +' km <sup>2</sup><br>'
+            );
         }
 
         function resetHighlight(e) {
@@ -143,7 +154,16 @@
 
         legend.addTo(myMap);
 
-        
+        var info = L.control({position: "bottomleft"});
+            info.onAdd = function(map) {
+                var div = L.DomUtil.create("div", "info");
+                div.innerHTML = 
+                    '<h2>Extra Information</h2><hr>' + 
+                    '<br>'+
+                    '<p id="info"></p>';
+                return div;
+            };
+            info.addTo(myMap);
     </script>
 </body>
 </html>
