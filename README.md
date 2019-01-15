@@ -1,7 +1,7 @@
 # Map2
 ### Web map for Israel Population
 
-link for tha app: https://lotan-souid.github.io/map2/
+link for tha website: https://lotan-souid.github.io/map2/
 
 this is a web map showing the population of Israel Towns from the censuse of 2015.
 
